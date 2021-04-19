@@ -334,10 +334,13 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
    * Address range: El rango de direcciones que defina puede ser público o privado (RFC 1918). Ya sea que defina el rango de direcciones como público o privado, solo se puede acceder al rango de direcciones desde la red virtual, desde redes virtuales interconectadas y desde cualquier red local que haya conectado a la red virtual.
 
 * ¿Qué son las *Availability Zone* y por qué seleccionamos 3 diferentes zonas?. ¿Qué significa que una IP sea *zone-redundant*?
+
+   * Availability Zone: Es una oferta de alta disponibilidad que protege sus aplicaciones y datos de las fallas del centro de datos. Las zonas de disponibilidad son ubicaciones físicas únicas dentro de una región azul. Cada zona está compuesta por uno o más centros de datos equipados con energía, refrigeración y redes independientes. Para garantizar la resiliencia, hay un mínimo de tres zonas separadas en todas las regiones habilitadas. La separación física de las zonas de disponibilidad dentro de una región protege las aplicaciones y los datos de las fallas del centro de datos.
+   * Zone-redundant: La plataforma se replica automáticamente en todas las zonas (por ejemplo, almacenamiento redundante por zonas, base de datos SQL).
+
 * ¿Cuál es el propósito del *Network Security Group*?
+
+   * Network Security Group: Contiene las reglas de seguridad que permiten o deniegan el tráfico de entrada a la red o el tráfico de salida de la red a partir de varios tipos de recursos del Azure.
+
 * Informe de newman 1 (Punto 2)
 * Presente el Diagrama de Despliegue de la solución.
-
-
-
-
