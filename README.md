@@ -278,6 +278,34 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
 newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALANCING_AZURE].postman_environment.json -n 10
 ```
 
+* Tablas de tiempo con 4 en paralelo:
+
+![](https://github.com/JuanMunozD/ARSW-LAB8/blob/main/images/Punto3Imagen1.PNG)
+
+![](https://github.com/JuanMunozD/ARSW-LAB8/blob/main/images/Punto3Imagen2.PNG)
+
+![](https://github.com/JuanMunozD/ARSW-LAB8/blob/main/images/Punto3Imagen3.PNG)
+
+![](https://github.com/JuanMunozD/ARSW-LAB8/blob/main/images/Punto3Imagen4.PNG)
+
+* Rendimiento de CPU:
+   
+   * Uso de CPU de la Máquina Virtual 1:
+
+   ![](https://github.com/JuanMunozD/ARSW-LAB8/blob/main/images/Punto3Imagen5.PNG)
+   
+   * Uso de CPU de la Máquina Virtual 2:
+
+   ![](https://github.com/JuanMunozD/ARSW-LAB8/blob/main/images/Punto3Imagen6.PNG)
+
+   * Uso de CPU de la Máquina Virtual 3:
+
+   ![](https://github.com/JuanMunozD/ARSW-LAB8/blob/main/images/Punto3Imagen7.PNG)
+
+   * Uso de CPU de la Máquina Virtual 4:
+
+   ![](https://github.com/JuanMunozD/ARSW-LAB8/blob/main/images/Punto3Imagen8.PNG)
+
 **Preguntas**
 
 * ¿Cuáles son los tipos de balanceadores de carga en Azure y en qué se diferencian?, ¿Qué es SKU, qué tipos hay y en qué se diferencian?, ¿Por qué el balanceador de carga necesita una IP pública?
