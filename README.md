@@ -145,8 +145,17 @@ La función se mantiene haciendo operaciones matemáticas con números grandes d
 Según lo visto en la imagen en promedio cada petición tarda en promedio 3 minutos, lo que es superior al tiempo obtenido al correr el mismo caso de forma independiente, esto se debe a que el servidor debe repartir su capacidad de procesamiento para responder a dos consultas de forma concurrente, por lo que el tiempo de respuesta de cada petición se ve afectado. Los errores se generaron porque en algunos momentos el servidor no contaba con recursos libres disponibles para asignar al cálculo de la respuesta de la petición por lo que se generaba un error. También hay que destacar que destacar que el consumo de CPU del servidor se mantuvo alto (95%+) durante todo el proceso.
 
 7. ¿Cuál es la diferencia entre los tamaños `B2ms` y `B1ls` (no solo busque especificaciones de infraestructura)?
+
+La principal diferencia yace en la escalabilidad que cada una presenta frente a grandes cantidades de datos, afectando esto el desempeño de la aplicación.
+
 8. ¿Aumentar el tamaño de la VM es una buena solución en este escenario?, ¿Qué pasa con la FibonacciApp cuando cambiamos el tamaño de la VM?
+
+Es una buena solución para bajar la carga del servidor y poder obtener mayor velocidad de respuesta puesto que con el nuevo tamaño se ejecutan más operaciones en menos tiempo, sin embargo el sistema aún no soporta que muchos usuarios efectuen peticiones de forma concurrente sin que el tiempo y la cantidad de respuestas se vea afectada. FibonacciApp deja de correr porque al cambiar el tamaño la máquina debe reiniciarse.
+
 9. ¿Qué pasa con la infraestructura cuando cambia el tamaño de la VM? ¿Qué efectos negativos implica?
+
+La máquina debe reiniciarse para poder cambiar el tamaño, como efecto negativo implica que el servicio no esté disponible mientras se realiza el escalamiento.
+
 10. ¿Hubo mejora en el consumo de CPU o en los tiempos de respuesta? Si/No ¿Por qué?
 11. Aumente la cantidad de ejecuciones paralelas del comando de postman a `4`. ¿El comportamiento del sistema es porcentualmente mejor?
 
