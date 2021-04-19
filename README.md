@@ -162,7 +162,17 @@ Tanto el consumo de CPU como el tiempo de respuesta mejoraron. Esto se debe a qu
 
 11. Aumente la cantidad de ejecuciones paralelas del comando de postman a `4`. ¿El comportamiento del sistema es porcentualmente mejor?
 
+![](https://github.com/JuanMunozD/ARSW-LAB8/blob/main/images/Punto11Imagen1.PNG)
 
+![](https://github.com/JuanMunozD/ARSW-LAB8/blob/main/images/Punto11Imagen2.PNG)
+
+![](https://github.com/JuanMunozD/ARSW-LAB8/blob/main/images/Punto11Imagen3.PNG)
+
+![](https://github.com/JuanMunozD/ARSW-LAB8/blob/main/images/Punto11Imagen4.PNG)
+
+![](https://github.com/JuanMunozD/ARSW-LAB8/blob/main/images/Punto11Imagen5.PNG)
+
+El comportamiento en términos de cantidad de peticiones realizadas exitosamente es peor que cuando se enviaban 2 ejecuciones paralelas de postman. En el caso de 4 ejecuciones paralelas tenemos que el 72.5% de las peticiones fueron exitosas, mientras que en el caso de 2 ejecuciones paralelas tenemos que el 90% de las peticiones fueron exitosas. En términos de consumo de CPU ambos casos presentan el mismo comportamiento de consumo, aproximadamente 25% de la CPU.
 
 ### Parte 2 - Escalabilidad horizontal
 
