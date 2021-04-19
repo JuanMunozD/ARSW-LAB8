@@ -157,7 +157,12 @@ Es una buena solución para bajar la carga del servidor y poder obtener mayor ve
 La máquina debe reiniciarse para poder cambiar el tamaño, como efecto negativo implica que el servicio no esté disponible mientras se realiza el escalamiento.
 
 10. ¿Hubo mejora en el consumo de CPU o en los tiempos de respuesta? Si/No ¿Por qué?
+
+Tanto el consumo de CPU como el tiempo de respuesta mejoraron. Esto se debe a que se aumentó la capacidad de procesamiento de la máquina, se añadieron 3 vCPUs y 27GiB de RAM, por lo que las operaciones realizadas representaban un porcentaje de CPU menor y se realizaban en menos tiempo.
+
 11. Aumente la cantidad de ejecuciones paralelas del comando de postman a `4`. ¿El comportamiento del sistema es porcentualmente mejor?
+
+
 
 ### Parte 2 - Escalabilidad horizontal
 
