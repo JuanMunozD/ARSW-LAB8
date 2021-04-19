@@ -86,9 +86,44 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 **Preguntas**
 
 1. ¿Cuántos y cuáles recursos crea Azure junto con la VM?
+
+   Se crean 6 recursos, entre ellos están:
+
+   * Red virtual.
+   * Cuenta de almacenamiento.
+   * Dirección IP pública.
+   * Grupo de seguridad de red.
+   * Interfaz de red.
+   * Disco.
+
 2. ¿Brevemente describa para qué sirve cada recurso?
+
+   * Red virtual: Es una red privada en Azure que permite que distintos recursos se puedan comunicar entre ellos, el internet y redes on-premise de forma segura.
+   * Cuenta de almacenamiento: Contiene todos los objetos de datos de Azure Storage: archivos, tablas, discos, etc.
+   * Dirección IP pública: Permite acceder remotamente al recurso desde redes externas.
+   * Grupo de seguridad de red: Un grupo de seguridad de la red contiene reglas de seguridad que permiten o restringen el tráfico de entrada a la red o el tráfico de salida de la red a partir de varios tipos de recursos de Azure.
+   * Interfaz de red: Permite que la máquina se comunique con internet y con otros recursos en la red local.
+   * Disco: Sirve para expandir las capacidades de almacenamiento de la máquina.
+
 3. ¿Al cerrar la conexión ssh con la VM, por qué se cae la aplicación que ejecutamos con el comando `npm FibonacciApp.js`? ¿Por qué debemos crear un *Inbound port rule* antes de acceder al servicio?
+
+Porque cuando se cierra la terminal SSH, esta manda un llamado a todos los procesos para que se cierren. Forever se encarga de matener ejecutando el script para que cuando se cierre la conexión SSH y se intente cerrar el proceso se vuelva a ejecutar para mantenerlo activo. También Se tuvo que crear un *Inbound port rule* para poder abrir este puerto en la máquina y permitir el tráfico de red por este.
+
 4. Adjunte tabla de tiempos e interprete por qué la función tarda tando tiempo.
+
+   | Caso | Tiempo(min)|
+   |---------|--------|
+   | 1000000 | 1.7 |
+   | 1010000 | 1.8 |
+   | 1020000 | 1.8 |
+   | 1030000 | 1.9 |
+   | 1040000 | 1.9 |
+   | 1050000 | 2.0 |
+   | 1060000 | 2.0 |
+   | 1070000 | 2.0 |
+   | 1080000 | 2.1 |
+   | 1090000 | 2.1 | 
+
 5. Adjunte imágen del consumo de CPU de la VM e interprete por qué la función consume esa cantidad de CPU.
 6. Adjunte la imagen del resumen de la ejecución de Postman. Interprete:
     * Tiempos de ejecución de cada petición.
