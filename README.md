@@ -111,23 +111,39 @@ Porque cuando se cierra la terminal SSH, esta manda un llamado a todos los proce
 
 4. Adjunte tabla de tiempos e interprete por qué la función tarda tando tiempo.
 
-   | Caso | Tiempo(min)|
-   |---------|--------|
-   | 1000000 | 1.7 |
-   | 1010000 | 1.8 |
-   | 1020000 | 1.8 |
-   | 1030000 | 1.9 |
-   | 1040000 | 1.9 |
-   | 1050000 | 2.0 |
-   | 1060000 | 2.0 |
-   | 1070000 | 2.0 |
-   | 1080000 | 2.1 |
-   | 1090000 | 2.1 | 
+| Caso | Tiempo(min)|
+|---------|--------|
+| 1000000 | 1.7 |
+| 1010000 | 1.8 |
+| 1020000 | 1.8 |
+| 1030000 | 1.9 |
+| 1040000 | 1.9 |
+| 1050000 | 2.0 |
+| 1060000 | 2.0 |
+| 1070000 | 2.0 |
+| 1080000 | 2.1 |
+| 1090000 | 2.1 | 
+
+La función tarda mucho tiempo porque el cálculo de Fibonacci está implementado con complejidad O(n) por lo que las entradas grandes implican bastantes cálculos, además al realizar siempre todas las operaciones sin hacer uso de memorización, cada petición debe re calcular todo el número desde 0.
 
 5. Adjunte imágen del consumo de CPU de la VM e interprete por qué la función consume esa cantidad de CPU.
+
+![](https://github.com/JuanMunozD/ARSW-LAB8/blob/main/images/Punto5.PNG)
+
+La función se mantiene haciendo operaciones matemáticas con números grandes durante un largo periodo de tiempo y dado que la capacidad de la máquina es muy poca, este proceso es suficiente para llevar a un alto consumo (90%+) mientras la petición se está ejecutando.
+
 6. Adjunte la imagen del resumen de la ejecución de Postman. Interprete:
     * Tiempos de ejecución de cada petición.
     * Si hubo fallos documentelos y explique.
+
+![](https://github.com/JuanMunozD/ARSW-LAB8/blob/main/images/Punto6Imagen1.PNG)
+
+![](https://github.com/JuanMunozD/ARSW-LAB8/blob/main/images/Punto6Imagen2.PNG)
+
+![](https://github.com/JuanMunozD/ARSW-LAB8/blob/main/images/Punto6Imagen3.PNG)
+
+Según lo visto en la imagen en promedio cada petición tarda en promedio 3 minutos, lo que es superior al tiempo obtenido al correr el mismo caso de forma independiente, esto se debe a que el servidor debe repartir su capacidad de procesamiento para responder a dos consultas de forma concurrente, por lo que el tiempo de respuesta de cada petición se ve afectado. Los errores se generaron porque en algunos momentos el servidor no contaba con recursos libres disponibles para asignar al cálculo de la respuesta de la petición por lo que se generaba un error. También hay que destacar que destacar que el consumo de CPU del servidor se mantuvo alto (95%+) durante todo el proceso.
+
 7. ¿Cuál es la diferencia entre los tamaños `B2ms` y `B1ls` (no solo busque especificaciones de infraestructura)?
 8. ¿Aumentar el tamaño de la VM es una buena solución en este escenario?, ¿Qué pasa con la FibonacciApp cuando cambiamos el tamaño de la VM?
 9. ¿Qué pasa con la infraestructura cuando cambia el tamaño de la VM? ¿Qué efectos negativos implica?
