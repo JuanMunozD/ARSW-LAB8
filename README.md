@@ -318,8 +318,21 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
    * Backend Pool: Se refiere al conjunto de backends que reciben un tráfico similar para su aplicación. En otras palabras, es una agrupación lógica de las instancias de su aplicación en todo el mundo que reciben el mismo tráfico y responden con el comportamiento esperado. Estos "backends" se despliegan a través de diferentes regiones o dentro de la misma región. Todos los backends pueden estar en modo de despliegue Activo/Activo o lo que se define como configuración Activo/Pasivo.
 
 * ¿Cuál es el propósito del *Health Probe*?
+
+   * Health probe: Permite que el equilibrador de carga detecte el estado del punto final del extremo trasero. La configuración del health probe y las respuestas del probe determinan qué instancias del conjunto del backend recibirán nuevos flujos. Puede utilizar health probe para detectar el fallo de una aplicación en un punto final del backend. También puede generar una respuesta personalizada a un health probe y utilizar el health probe para el control del flujo para gestionar la carga o el tiempo de inactividad planificado.
+
 * ¿Cuál es el propósito de la *Load Balancing Rule*? ¿Qué tipos de sesión persistente existen, por qué esto es importante y cómo puede afectar la escalabilidad del sistema?.
+
+   * Load Balancing Rule: Define la configuración de IP de interfaz para el tráfico entrante y el grupo de back-end para recibir el tráfico, junto con el puerto de origen y destino requerido.
+   * Proporciona equilibrio de carga entrante y la regla de salida controla el NAT saliente proporcionado para la VM. Este inicio rápido utiliza dos grupos de backend separados, uno para entrada y otro para salida, para ilustrar la capacidad y permitir flexibilidad para este escenario.
+
 * ¿Qué es una *Virtual Network*? ¿Qué es una *Subnet*? ¿Para qué sirven los *address space* y *address range*?
+
+   * Virtual Network: Permite que muchos tipos de recursos de Azure, como las Máquinas Virtuales Azure (VM), se comuniquen de forma segura entre sí, con Internet y con las redes locales.
+   * Subnet: Permiten segmentar la red virtual en una o más subredes y asignar una porción del espacio de direcciones de la red virtual a cada subred. Luego puede desplegar recursos de Azure en una subred específica. Al igual que en una red tradicional, las subredes le permiten segmentar el espacio de direcciones de la red virtual en segmentos que son apropiados para la red interna de la organización. Esto también mejora la eficiencia de la asignación de direcciones.
+   * Address space: Cuando se crea una Virtual Network, se debe especificar un espacio de direcciones IP privadas personalizadas utilizando direcciones públicas y privadas (RFC 1918). Azure asigna a los recursos de una red virtual una dirección IP privada del espacio de direcciones que usted asigne.
+   * Address range: El rango de direcciones que defina puede ser público o privado (RFC 1918). Ya sea que defina el rango de direcciones como público o privado, solo se puede acceder al rango de direcciones desde la red virtual, desde redes virtuales interconectadas y desde cualquier red local que haya conectado a la red virtual.
+
 * ¿Qué son las *Availability Zone* y por qué seleccionamos 3 diferentes zonas?. ¿Qué significa que una IP sea *zone-redundant*?
 * ¿Cuál es el propósito del *Network Security Group*?
 * Informe de newman 1 (Punto 2)
