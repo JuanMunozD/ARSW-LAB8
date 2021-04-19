@@ -249,6 +249,26 @@ http://52.155.223.248/fibonacci/1
 
 2. Realice las pruebas de carga con `newman` que se realizaron en la parte 1 y haga un informe comparativo donde contraste: tiempos de respuesta, cantidad de peticiones respondidas con éxito, costos de las 2 infraestrucruras, es decir, la que desarrollamos con balanceo de carga horizontal y la que se hizo con una maquina virtual escalada.
 
+* Tablas de tiempo con 2 en paralelo:
+
+![](https://github.com/JuanMunozD/ARSW-LAB8/blob/main/images/Punto2Imagen1.PNG)
+
+![](https://github.com/JuanMunozD/ARSW-LAB8/blob/main/images/Punto2Imagen2.PNG)
+
+* Rendimiento de CPU:
+
+   * Uso de CPU de la Máquina Virtual 1:
+   
+   ![](https://github.com/JuanMunozD/ARSW-LAB8/blob/main/images/Punto2Imagen3.PNG)
+   
+   * Uso de CPU de la Máquina Virtual 2:
+   
+   ![](https://github.com/JuanMunozD/ARSW-LAB8/blob/main/images/Punto2Imagen4.PNG)
+   
+   * Uso de CPU de la Máquina Virtual 3:
+   
+   ![](https://github.com/JuanMunozD/ARSW-LAB8/blob/main/images/Punto2Imagen5.PNG)
+
 3. Agregue una 4 maquina virtual y realice las pruebas de newman, pero esta vez no lance 2 peticiones en paralelo, sino que incrementelo a 4. Haga un informe donde presente el comportamiento de la CPU de las 4 VM y explique porque la tasa de éxito de las peticiones aumento con este estilo de escalabilidad.
 
 ```
